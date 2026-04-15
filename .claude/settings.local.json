@@ -14,7 +14,8 @@
       "Bash(git -C /c/AppDev/auto-manual log --oneline -5)",
       "Bash(node:*)",
       "Bash(git add:*)",
-      "Bash(taskkill:*)"
+      "Bash(taskkill:*)",
+      "Bash(npm show:*)"
     ]
   }
 }
