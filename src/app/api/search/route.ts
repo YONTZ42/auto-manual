@@ -9,10 +9,13 @@ export async function GET(req: Request) {
     return NextResponse.json({ contents: [], items: [] });
   }
 
-  const [contents, items] = await Promise.all([
-    searchContents(q),
-    searchItems(q),
-  ]);
-
-  return NextResponse.json({ contents, items });
+  try {
+    const [contents, items] = await Promise.all([
+      searchContents(q),
+      searchItems(q),
+    ]);
+    return NextResponse.json({ contents, items });
+  } catch {
+    return NextResponse.json({ contents: [], items: [] });
+  }
 }
