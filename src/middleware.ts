@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-export async function proxy(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   // /owner 以下の認証チェック
   if (!request.nextUrl.pathname.startsWith('/owner')) {
     return NextResponse.next();
